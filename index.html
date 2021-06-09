@@ -1,5 +1,6 @@
 <!doctype html>
-<!-- This is a comment -->
+
+<!-- init webpage -->
 <html>
 		<head>
 				<title>Tutorial 1: Getting Started</title>
@@ -7,3 +8,34 @@
 		</head>
 </html>
 
+<!-- cytoscape page style -->
+<style>
+    #cy {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+		}
+</style>
+
+<!-- init graph -->
+<body>
+    <div id="cy"></div>
+    <script>
+      var cy = cytoscape({
+        container: document.getElementById('cy'),
+        elements: [
+          { data: { id: 'a' } },
+          { data: { id: 'b' } },
+          {
+            data: {
+              id: 'ab',
+              source: 'a',
+              target: 'b'
+            }
+          }]
+      });
+    </script>
+</body>
+</html>
