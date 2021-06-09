@@ -34,7 +34,19 @@
               source: 'a',
               target: 'b'
             }
-          }]
+          }],
+			  layout: {
+					  name: 'grid'
+			  },
+			  style: [
+					  {
+							  selector: 'node',
+							  style: { 
+									  shape: 'hexagon',
+									  'background-color': 'red',
+									  label: 'data(id)'
+							  }
+					  }]
       });
     </script>
 </body>
