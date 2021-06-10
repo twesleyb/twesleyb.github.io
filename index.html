@@ -3,6 +3,7 @@
 		<head>
 				<link rel="stylesheet" href="dist/reveal.css">
 				<link rel="stylesheet" href="dist/theme/black.css">
+				<link rel="stylesheet" href="plugin/highlight/zenburn.css">
 		</head>
 		<body>
 				<div class="reveal">
@@ -14,14 +15,55 @@
 								</section>
 								<section>
 										Slide 2
-										<p style="color:#0000ff;">You can change the text color of a whole sentence or paragraph...</p>
+										<p style="color:#0000ff;">
+										You can change the text color of a whole sentence or paragraph...
+										</p>
+								</section>
+								<section data-markdown>
+										<textarea data-template>
+												## Another slide
+												Write slides in markdown using the `markdown.js` plugin.
+												Added `data-markdown` to section header and wrapped text with `textarea data-template` `/textarea`.
+												---
+												## Yet another markdown slide.
+												* foobar
+												* business
+										</textarea>
+								</section>
+								<section>
+										This is another slide.
+								</section>
+								<section data-markdown="example.md"
+										 data-separator="^\n\n\n"
+										 data-separator-vertical="^\n\n"
+										 data-separator-notes="Notes:"
+										 data-charset="iso-8859-15">
+								</section>
+								<section>
+										To enable highlighting you must (1) add
+										plugin src, (2) add RevealHighlight
+										plugin, and (3) add theme to stylesheet!
+								</section>
+								<section data-markdown>
+										<textarea data-template>
+												```js [1-2|3|4]
+												let a = 1;
+												let b = 2;
+												let c = x =>
+												1 + 2 + x;
+												c(3);
+												```
+										</textarea>
 								</section>
 						</div>
 				</div>
-				<script
-						src="dist/reveal.js"></script>
+				<script src="dist/reveal.js"></script>
+				<script src="plugin/markdown/markdown.js"></script>
+				<script src="plugin/highlight/highlight.js"></script>
 				<script>
-						Reveal.initialize();
+						Reveal.initialize({
+								plugins: [RevealMarkdown, RevealHighlight]
+						});
 				</script>
 		</body>
 </html>

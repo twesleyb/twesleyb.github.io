@@ -8,4 +8,6 @@ npm install
 
 # launch local webpage
 npm start
+firefox http://localhost:8000
+
 ```
